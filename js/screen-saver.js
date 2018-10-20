@@ -18,42 +18,54 @@ function rgbToHex(r, g, b) {
     return ((r << 16) | (g << 8) | b).toString(16);
 }
 
-async function run() {
+// https://stackoverflow.com/questions/6735470/get-pixel-color-from-canvas-on-mouseover
+function getColorAtPixel(x, y) {
+    var p = ctx.getImageData(x, y, 1, 1).data; 
+    color = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
+    return color;
+}
+
+function getContext() {
     var c = document.getElementById("screen-saver-canvas");
-    var ctx = c.getContext("2d");
-    //ctx.moveTo(0, 0);
-    //ctx.lineTo(200, 100);
-    //ctx.stroke();
+    return c.getContext("2d");
+}
+
+var ctx = getContext();
+
+function drawRandomSquare(centerX, centerY, color) {
+    ctx.beginPath();
+    ctx.rect(centerX - 15 , centerY - 15, 30, 30);
+    ctx.fillStyle = color;
+    ctx.fill();
+}
+
+async function run() {
 
     var count = 0;
 
-    while (true) {
-        count++;
+    for (var i = 0; i < 10000; i++) {
         var x = randInt(0, width);
         var y = randInt(0, height);
-        var color;
-
-        if (count < 1000) {
-            color = randInt(0,2);
-            if (color == 1) {
-                color = 'red';
-            } else {
-                color = 'blue';
-            }
-        } else  {
-            // https://stackoverflow.com/questions/6735470/get-pixel-color-from-canvas-on-mouseover
-            var p = ctx.getImageData(x, y, 1, 1).data; 
-            color = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
+        color = randInt(0,2);
+        if (color == 1) {
+            color = 'red';
+        } else {
+            color = 'blue';
         }
+        drawRandomSquare(x, y, color);
+    }
 
-        ctx.beginPath();
-        ctx.rect(x - 15 , y - 15, 30, 30);
-        ctx.fillStyle = color;
-        ctx.fill();
-
-        if (count > 10000 && count % 100 == 0)
+    var count = 0;
+    while (true) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        var color = getColorAtPixel(x, y);
+        drawRandomSquare(x, y, color);
+        count++;
+        if (count % 100 == 0) {
             await sleep(1);
-    }   
+        }
+    }
 }
 
 run();
