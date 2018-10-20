@@ -15,4 +15,4 @@ This course introduces you to JavaScript / HTML5 / CSS programming. No prerequis
 - Functions
 - For loops
 - While loops
-- Maigc
+- Magic
