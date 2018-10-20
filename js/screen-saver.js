@@ -36,31 +36,20 @@ async function run() {
         if (count < 1000) {
             color = randInt(0,2);
             if (color == 1) {
-                color = 'black';
+                color = 'red';
             } else {
-                color = 'white';
+                color = 'blue';
             }
         } else  {
             // https://stackoverflow.com/questions/6735470/get-pixel-color-from-canvas-on-mouseover
             var p = ctx.getImageData(x, y, 1, 1).data; 
             color = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-            if (color != "#000000" && color != "#ffffff") {
-                color = randInt(0,2);
-                if (color == 1) {
-                    color = 'black';
-                } else {
-                    color = 'white';
-                }
-            }
-            //console.log(color);
         }
 
         ctx.beginPath();
-        ctx.arc(x, y, 15, 0, 2 * Math.PI);
+        ctx.rect(x - 15 , y - 15, 30, 30);
         ctx.fillStyle = color;
-
         ctx.fill();
-        //ctx.stroke();
 
         if (count > 10000 && count % 100 == 0)
             await sleep(1);
