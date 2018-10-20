@@ -48,9 +48,9 @@ async function run() {
         var y = randInt(0, height);
         color = randInt(0,2);
         if (color == 1) {
-            color = 'red';
+            color = 'black';
         } else {
-            color = 'blue';
+            color = 'white';
         }
         drawRandomSquare(x, y, color);
     }
