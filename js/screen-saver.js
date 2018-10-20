@@ -1,14 +1,5 @@
-
 var width = 600;
 var height = 300;
-var ctx = getContext();
-
-function drawRandomSquare(centerX, centerY, color) {
-    ctx.beginPath();
-    ctx.rect(centerX - 15 , centerY - 15, 30, 30);
-    ctx.fillStyle = color;
-    ctx.fill();
-}
 
 async function run() {
 

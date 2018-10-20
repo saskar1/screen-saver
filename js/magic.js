@@ -1,3 +1,4 @@
+
 // This JavaScript function always returns a random number between min (included) and max (excluded)
 // https://www.w3schools.com/js/js_random.asp
 function randInt(min, max) {
@@ -24,4 +25,13 @@ function getColorAtPixel(x, y) {
 function getContext() {
     var c = document.getElementById("screen-saver-canvas");
     return c.getContext("2d");
+}
+
+var ctx = getContext();
+
+function drawRandomSquare(centerX, centerY, color) {
+    ctx.beginPath();
+    ctx.rect(centerX - 15 , centerY - 15, 30, 30);
+    ctx.fillStyle = color;
+    ctx.fill();
 }
