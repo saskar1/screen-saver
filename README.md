@@ -23,3 +23,7 @@ I assume you are running OS X.
 
 Download and install [git](https://git-scm.com/). Git is a "source-code management"
 tool. I.e., it helps you manage your source code.
+
+Imagine you're writing an essay. You finish your first draft and save it as "essay-draft-1.txt." Then you save it again as "essay-draft-2.txt" and start working on your second draft. This way, you can always go back to the first draft, in case you end up messing things up in the second draft.
+
+Git helps you manage multiple drafts of software, so you can go back to earlier versions in case you mess things up. Git also also helps with other software-development tasks such as downloading and uploading software (from/to places like github.com).
