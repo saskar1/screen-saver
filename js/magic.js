@@ -29,7 +29,7 @@ function getContext() {
 
 var ctx = getContext();
 
-function drawRandomSquare(centerX, centerY, color) {
+function drawSquare(centerX, centerY, color) {
     ctx.beginPath();
     ctx.rect(centerX - 15 , centerY - 15, 30, 30);
     ctx.fillStyle = color;

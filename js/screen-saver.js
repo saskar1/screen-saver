@@ -14,7 +14,7 @@ async function run() {
         } else {
             color = 'white';
         }
-        drawRandomSquare(x, y, color);
+        drawSquare(x, y, color);
     }
 
     var count = 0;
@@ -22,7 +22,7 @@ async function run() {
         var x = randInt(0, width);
         var y = randInt(0, height);
         var color = getColorAtPixel(x, y);
-        drawRandomSquare(x, y, color);
+        drawSquare(x, y, color);
         count++;
         if (count % 100 == 0) {
             await sleep(1);
