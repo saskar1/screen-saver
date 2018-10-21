@@ -7,19 +7,22 @@ I assume you are running OS X.
 
 ## Contents
 
-1. Git
-2. Sublime
-3. Chrome Developer Tools
-4. HTML
-5. JavaScript
-6. Variables
-7. If statements
-8. Functions
-9. For loops
-10. While loops
-11. Magic
+1. Study the command-line terminal
+2. Git
+3. Sublime
+4. Chrome Developer Tools
+5. HTML
+6. JavaScript
+7. Variables
+8. If statements
+9. Functions
+10. For loops
+11. While loops
+12. Magic
 
-## 1. Git
+## 1. Study the command-line terminal
+
+## 2. Git
 
 Download and install [git](https://git-scm.com/). Git is a "source-code management"
 tool. I.e., it helps you manage your source code.
