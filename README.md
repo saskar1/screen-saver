@@ -200,11 +200,35 @@ together "expand" one pixel.
 I will explain more in a few sections.
 
 
-## 2. Git
+## 8. Phase 2 in detail
 
-Download and install [git](https://git-scm.com/). Git is a "source-code management"
-tool. I.e., it helps you manage your source code.
+Recall, Phase 2 draws 10,000 squares using a for loop with the following code:
 
-Imagine you're writing an essay. You finish your first draft and save it as "essay-draft-1.txt." Then you save it again as "essay-draft-2.txt" and start working on your second draft. This way, you can always go back to the first draft, in case you end up messing things up in the second draft.
+```js
+    for (var i = 0; i < 10000; i++) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        color = randInt(0,2);
+        if (color == 1) {
+            color = 'black';
+        } else {
+            color = 'white';
+        }
+        drawSquare(x, y, color);
+    }
+```
 
-Git helps you manage multiple drafts of software, so you can go back to earlier versions in case you mess things up. Git also also helps with other software-development tasks such as downloading and uploading software (from/to places like github.com).
+In this lesson, I'm not going to explain the first line (`for (var i = 0; i < 10000; i++) {`) in any more detail than I already have.
+
+Rather, let's focus on the lines of code in the loop body.
+
+### The definitions of `x` and `y`
+
+`var x = randInt(0, width);` and `var y = randInt(0, height);` are variable definitions, similar to `width`, `height`, and `count.`
+
+Whereas `width`, `height`, and `count` are assigned constant values (600, 300, and 0 are constant values), `x` and `y` are assigned random values. Specifically `x` is assigned a random integer between zero and `width`, and `y` is similarly assigned a random integer between zero and `height`.
+
+Each time Chrome executes the body of the forloop, `x` and `y` are assigned different values.
+
+(See what happens if you change the definition of `x` to something like `var x = randInt(100, 200);` and so on).
+
