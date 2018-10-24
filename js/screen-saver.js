@@ -8,7 +8,7 @@ async function run() {
     for (var i = 0; i < 10000; i++) {
         var x = randInt(0, width);
         var y = randInt(0, height);
-        color = randInt(0,2);
+        var color = randInt(0,2);
         if (color == 1) {
             color = 'black';
         } else {
