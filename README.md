@@ -234,5 +234,4 @@ Each time Chrome executes the body of the forloop, `x` and `y` are assigned diff
 
 ### The definition of `color`
 
-
-
+`color` is defined similarly to `x` and `y`, except `color` is a random value between 0 and 2.
