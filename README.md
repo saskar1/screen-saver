@@ -77,7 +77,7 @@ async function run() {
     for (var i = 0; i < 10000; i++) {
         var x = randInt(0, width);
         var y = randInt(0, height);
-        color = randInt(0,2);
+        var color = randInt(0,2);
         if (color == 1) {
             color = 'black';
         } else {
@@ -152,7 +152,7 @@ This phase defines two variables `width` and `height`. In the next two phases, t
     for (var i = 0; i < 10000; i++) {
         var x = randInt(0, width);
         var y = randInt(0, height);
-        color = randInt(0,2);
+        var color = randInt(0,2);
         if (color == 1) {
             color = 'black';
         } else {
@@ -208,7 +208,7 @@ Recall, Phase 2 draws 10,000 squares using a for loop with the following code:
     for (var i = 0; i < 10000; i++) {
         var x = randInt(0, width);
         var y = randInt(0, height);
-        color = randInt(0,2);
+        var color = randInt(0,2);
         if (color == 1) {
             color = 'black';
         } else {
@@ -231,4 +231,8 @@ Whereas `width`, `height`, and `count` are assigned constant values (600, 300, a
 Each time Chrome executes the body of the forloop, `x` and `y` are assigned different values.
 
 (See what happens if you change the definition of `x` to something like `var x = randInt(100, 200);` and so on).
+
+### The definition of `color`
+
+
 
