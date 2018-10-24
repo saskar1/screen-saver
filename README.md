@@ -143,6 +143,9 @@ var width = 600;
 var height = 300;
 ```
 
+This phase defines two variables `width` and `height`. In the next two phases, the code uses these variable to select random `x` and `y` coordinates.
+
+
 ### Phase 2: draw 10,000 sqaures
 
 ```js
@@ -159,7 +162,17 @@ var height = 300;
     }
 ```
 
-### Phase 3: indefinitiately expand pixels
+This phase draws 10,000 squares. 
+
+The phase begins with the line `for (var i = 0; i < 10000; i++) {` which begins the definition of a "for loop." Notice the number `10000` in this line. If you were to change that number to `5` (go ahead and do that), then Phase 2 would only draw 5 sqaures.
+
+Also notice, the first line ends with a curly brace, and the last line ends with a curly brace. These curly braces mark the beginning and end of the for loop.
+
+There are 10 lines of code inside the body of the for loop (i.e. inside the curly braces). Together, these lines draw one square. The for loop executes the body of the loop 10,000 times, so, all together, thats how the for loop draws 10,000 squares.
+
+I will explain more in a few sections.
+
+### Phase 3: indefinitely "expand" pixels
 
 ```js
     var count = 0;
@@ -174,6 +187,15 @@ var height = 300;
         }
     }
 ```
+
+Phase 3 begins with a variable definition, `var count = 0;`, which is similar to the variable definitions of Phase 1.
+
+This page begins with the line `while(true) {` which begins the  definition of a "while-true loop." Whereas the for loop of
+Phase 2 draws 10,000 squares, this loop draws ∞ squares (well actually, once the web page is closed it stops drawing squares).
+That's the difference between a for loop and a while-true loop: while-true loops never end.
+
+Like for loop, the while-true loop has two curly braces. This while-true loop contains 8 lines of code which I will explain in a few sections.
+
 
 ## 2. Git
 
