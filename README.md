@@ -190,11 +190,14 @@ I will explain more in a few sections.
 
 Phase 3 begins with a variable definition, `var count = 0;`, which is similar to the variable definitions of Phase 1.
 
-This page begins with the line `while(true) {` which begins the  definition of a "while-true loop." Whereas the for loop of
-Phase 2 draws 10,000 squares, this loop draws ∞ squares (well actually, once the web page is closed it stops drawing squares).
-That's the difference between a for loop and a while-true loop: while-true loops never end.
+The phase continues with the line `while(true) {`, which begins the  definition of a "while-true loop." Whereas the for loop 
+of Phase 2 draws 10,000 squares, this while-true loop draws ∞ squares. (Well actually, once the web page is closed it stops 
+drawing squares). The difference between a for loop and a while-true loop is: while-true loops never end.
 
-Like for loop, the while-true loop has two curly braces. This while-true loop contains 8 lines of code which I will explain in a few sections.
+Like the for loop, the while-true loop has two curly braces. The body of the while-true loop contains 8 lines of code, which 
+together "expand" one pixel.
+
+I will explain more in a few sections.
 
 
 ## 2. Git
