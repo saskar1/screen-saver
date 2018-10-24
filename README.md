@@ -64,7 +64,7 @@ For now, all you need to know is that when Chrome "renders" this web page, it ru
 
 ## 4. Explaining js/screen-saver.js
 
-Then open up the `js/screen-saver.js` file in Sublime. It looks like this:
+Open up the `js/screen-saver.js` file in Sublime. It looks like this:
 
 ```js
 var width = 600;
@@ -104,9 +104,33 @@ run();
 
 This is a JavaScript file containing JavaScript source code. Chrome executes this code every time you (re)load the `index.html` file in Chrome.
 
+
+## 5. Experiment 1, color
+
 See the line where it says `color = 'black';`?
 
 Change it to `color = 'turquoise';`, save the file, and click the reload button on `index.html` in Chrome.
+
+## 5. Experiment 2, width and height
+
+Change `var width = 600;` to `var width = 100;`. Save and reload. What happens?
+
+Change the width to 9999. What happens?
+
+Reset the width back to 600, and play with the height. What happens?
+
+Reset the width and height back to 600 and 300 respectively. Then go to `index.html` and play with the width and height defined in `canvas` tag.
+
+### Explanation
+
+The `canvas` tag creates a "canvas" on the HTML page, which the `.js` file draws upon. Setting the width and height of the `canvas` tag determines the dimensions that can be drawn to.
+
+In contrast, the width and height, as defined in the `.js` file, determines what is actually drawn.
+
+If the .js file specifies
+*bigger* dimensions than the canvas, then the .js file will draw outside of the canvas (which isn't shown on the page).
+
+If the .js file specifies *smaller* dimensions than the canvas, then the .js file will only draw to a portion of the canvas.
 
 
 
