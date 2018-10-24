@@ -5,6 +5,8 @@
 This course introduces you to JavaScript / HTML5 / CSS programming. No prerequisites.
 I assume you are running OS X.
 
+These are lecture notes; they do not supplant in-person instruction.
+
 ## Contents
 
 1. Introduction to git, terminal, and Sublime, for novice programmers
@@ -25,7 +27,9 @@ I assume you are running OS X.
 
 Follow this tutorial: https://medium.com/@hawk/introduction-to-git-terminal-and-sublime-for-novice-programmers-1ab7c364d67c
 
-## 2. open index.html
+Then open up the `index.html` file in Sublime (double click the file on the left pane of Sublime).
+
+## 2. Open index.html in Chrome
 
 In the terminal, make sure you are in the `screen-saver` directory.
 
@@ -35,7 +39,77 @@ From the terminal:
 $ open index.html
 ```
 
-This should open up a burbling black and white animation in Chrome that looks like this: 
+This should open up a burbling black and white animation in Chrome that looks like this page: https://mikegagnon.github.io/screen-saver/
+
+## 3. Explaining index.html
+
+`index.html` looks like this:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Screen Saver</title>
+</head>
+<body>
+  <canvas id="screen-saver-canvas" width="600" height="300"></canvas>
+  <script src="js/magic.js"></script>
+  <script src="js/screen-saver.js"></script>
+</html>
+```
+
+This is an HTML web page. I'll explain HTML in the next lesson.
+
+For now, all you need to know is that when Chrome "renders" this web page, it runs `screen-saver.js` because of this "tag": `<script src="js/screen-saver.js"></script>`.
+
+## 4. Explaining js/screen-saver.js
+
+Then open up the `js/screen-saver.js` file in Sublime. It looks like this:
+
+```js
+var width = 600;
+var height = 300;
+
+async function run() {
+
+    var count = 0;
+
+    for (var i = 0; i < 10000; i++) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        color = randInt(0,2);
+        if (color == 1) {
+            color = 'black';
+        } else {
+            color = 'white';
+        }
+        drawSquare(x, y, color);
+    }
+
+    var count = 0;
+    while (true) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        var color = getColorAtPixel(x, y);
+        drawSquare(x, y, color);
+        count++;
+        if (count % 100 == 0) {
+            await sleep(1);
+        }
+    }
+}
+
+run();
+```
+
+This is a JavaScript file containing JavaScript source code. Chrome executes this code every time you (re)load the `index.html` file in Chrome.
+
+See the line where it says `color = 'black';`?
+
+Change it to `color = 'turquoise';`, save the file, and click the reload button on `index.html` in Chrome.
+
+
+
 
 
 ## 2. Git
