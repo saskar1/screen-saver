@@ -164,7 +164,7 @@ This phase defines two variables `width` and `height`. In the next two phases, t
 
 This phase draws 10,000 squares. 
 
-The phase begins with the line `for (var i = 0; i < 10000; i++) {` which begins the definition of a "for loop." Notice the number `10000` in this line. If you were to change that number to `5` (go ahead and do that), then Phase 2 would only draw 5 sqaures.
+The phase begins with the line `for (var i = 0; i < 10000; i++) {` which begins the definition of a "for loop." Notice the number `10000` in this line. If you were to change that number to `5`, then Phase 2 would only draw 5 sqaures. (Go ahead and see how that would change the animation).
 
 Also notice, the first line ends with a curly brace, and the last line ends with a curly brace. These curly braces mark the beginning and end of the for loop.
 
