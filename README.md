@@ -7,6 +7,7 @@ I assume you are running OS X.
 
 ## Contents
 
+1. Introduction to git, terminal, and Sublime, for novice programmers
 1. Study the command-line terminal
 2. Git
 3. Sublime
@@ -20,7 +21,22 @@ I assume you are running OS X.
 11. While loops
 12. Magic
 
-## 1. Study the command-line terminal
+## 1. Introduction to git, terminal, and Sublime, for novice programmers
+
+Follow this tutorial: https://medium.com/@hawk/introduction-to-git-terminal-and-sublime-for-novice-programmers-1ab7c364d67c
+
+## 2. open index.html
+
+In the terminal, make sure you are in the `screen-saver` directory.
+
+From the terminal:
+
+```
+$ open index.html
+```
+
+This should open up a burbling black and white animation in Chrome that looks like this: 
+
 
 ## 2. Git
 
