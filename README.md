@@ -111,7 +111,7 @@ See the line where it says `color = 'black';`?
 
 Change it to `color = 'turquoise';`, save the file, and click the reload button on `index.html` in Chrome.
 
-## 5. Experiment 2, width and height
+## 6. Experiment 2, width and height
 
 Change `var width = 600;` to `var width = 100;`. Save and reload. What happens?
 
@@ -132,9 +132,48 @@ If the .js file specifies
 
 If the .js file specifies *smaller* dimensions than the canvas, then the .js file will only draw to a portion of the canvas.
 
+## 7. Overview of the program
 
+There are three phases to the `screen-saver.js` program:
 
+### Phase 1: initialize variables
 
+```js
+var width = 600;
+var height = 300;
+```
+
+### Phase 2: draw 10,000 sqaures
+
+```js
+    for (var i = 0; i < 10000; i++) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        color = randInt(0,2);
+        if (color == 1) {
+            color = 'black';
+        } else {
+            color = 'white';
+        }
+        drawSquare(x, y, color);
+    }
+```
+
+### Phase 3: indefinitiately expand pixels
+
+```js
+    var count = 0;
+    while (true) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        var color = getColorAtPixel(x, y);
+        drawSquare(x, y, color);
+        count++;
+        if (count % 100 == 0) {
+            await sleep(1);
+        }
+    }
+```
 
 ## 2. Git
 
