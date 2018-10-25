@@ -78,8 +78,6 @@ var height = 300;
 
 async function run() {
 
-    var count = 0;
-
     for (var i = 0; i < 10000; i++) {
         var x = randInt(0, width);
         var y = randInt(0, height);
@@ -243,8 +241,6 @@ var width = 600;
 var height = 300;
 
 async function run() {
-
-    var count = 0;
 
     for (var i = 0; i < 10000; i++) {
         var x = randInt(0, width);
