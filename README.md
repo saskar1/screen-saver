@@ -179,13 +179,13 @@ This phase draws 10,000 squares, one at a time, one after another. Each time thi
 
 After Phase 2 has finished drawing 10,000 squares, Phase 3 begins.
 
-Phase 3 continually draws squares to the canvas, and does not stop until you close the tab or window in Chrome.
+Phase 3 continually draws squares onto the canvas, and does not stop until you close the tab or window in Chrome.
 
-Each time Phase 3 draws a square, it begins by picking a random x, y pixel on the canvas. It then checks to see what is the color of the pixel. After that, it draws a new square (centered at the x, y coordinate of the pixel), and the square is filled in with the color at the pixel?
+Each time Phase 3 draws a square, it begins by picking a random x, y pixel on the canvas. It then checks to see what is the color of the pixel. After that, it draws a new square (centered at the x, y coordinate of the pixel), and the square is filled in with the color of the pixel.
 
 ### That's all
 
-Do you see how these phases give rise to the animation pattern you see when Chrome runs this code?
+Do you see how these phases give rise to the animation pattern you see when Chrome runs this code!?
 
 
 ## 8. Diving into the phases of the program
