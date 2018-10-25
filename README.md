@@ -377,5 +377,16 @@ During execution, if the conditional resolves to `true`, then Chrome executes th
 
 That was a lot of words, and what it all boils down to is: if color is randomly chosen to be 1, then assign `'black'` to color. Or, if color is randomly chosen to be zero, then assign `'white'` to color.
 
-That's all.
+Phew.
 
+### The `drawSquare` function call 
+
+The last line of the for loop is:
+
+```
+        drawSquare(x, y, color);
+```
+
+This line draws a square, centered at `x` and `y` with color `color`.
+
+That's all.
