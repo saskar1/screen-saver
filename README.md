@@ -375,7 +375,7 @@ Does that make sense? No. That's OK, we'll come back to this topic in subsequent
 
 During execution, if the conditional resolves to `true`, then Chrome executes the first block (wrapped by curly braces). Otherwise, Chrome executes the second block (wrapped by curly braces).
 
-That was a lot of words, and what it all boils down to is: if color is randomly chosen to be 1, then assign `'black'` to color. Or, if color is randomly chosen to be zero, then assign `'white'` to color.
+That was a lot of words, and what it all boils down to is: if color is randomly chosen to be 1, then assign `'black'` to the variable `color`. Or, if color is randomly chosen to be zero, then assign `'white'` to the variable `color`.
 
 Phew.
 
