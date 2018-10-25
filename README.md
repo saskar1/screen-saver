@@ -143,6 +143,60 @@ var width = 600;
 var height = 300;
 ```
 
+### Phase 2: draw 10,000 sqaures
+
+```js
+    for (var i = 0; i < 10000; i++) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        var color = randInt(0,2);
+        if (color == 1) {
+            color = 'black';
+        } else {
+            color = 'white';
+        }
+        drawSquare(x, y, color);
+    }
+```
+
+This phase draws 10,000 squares, one at a time, one after another. Each time this phase draws a square, it draws the square at a random location on the canvas, and it draws the square with a random color (either black or white).
+
+### Phase 3: indefinitely "expand" pixels
+
+```js
+    var count = 0;
+    while (true) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        var color = getColorAtPixel(x, y);
+        drawSquare(x, y, color);
+        count++;
+        if (count % 100 == 0) {
+            await sleep(1);
+        }
+    }
+```
+
+After Phase 2 has finished drawing 10,000 squares, Phase 3 begins.
+
+Phase 3 continually draws squares to the canvas, and does not stop until you close the tab or window in Chrome.
+
+Each time Phase 3 draws a square, it begins by picking a random x, y pixel on the canvas. It then checks to see what is the color of the pixel. After that, it draws a new square (centered at the x, y coordinate of the pixel), and the square is filled in with the color at the pixel?
+
+### That's all
+
+Do you see how these phases give rise to the animation pattern you see when Chrome runs this code?
+
+
+## 8. Diving into the phases of the program
+
+### Phase 1: initialize variables
+
+```js
+var width = 600;
+var height = 300;
+```
+
 This phase defines two variables `width` and `height`. In the next two phases, the code uses these variable to select random `x` and `y` coordinates.
 
 
@@ -162,7 +216,7 @@ This phase defines two variables `width` and `height`. In the next two phases, t
     }
 ```
 
-This phase draws 10,000 squares. 
+Recall, this phase draws 10,000 squares. 
 
 The phase begins with the line `for (var i = 0; i < 10000; i++) {` which begins the definition of a "for loop." Notice the number `10000` in this line. If you were to change that number to `5`, then Phase 2 would only draw 5 sqaures. (Go ahead and see how that would change the animation).
 
