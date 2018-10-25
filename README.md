@@ -7,6 +7,12 @@ I assume you are running OS X.
 
 These are lecture notes; they do not supplant in-person instruction.
 
+This lesson begins with instructions on getting started with git, terminal, and Sublime. Follow the instructions carefully and absorb everything.
+
+Then, I'm going to start slinging a lot at you, really fast. Don't worry so much about having a perfect understanding of what everything precisely means and how everything precisely works. Just follow along, and focus on the gist. Think of it like learning Spanish immersively.
+
+Subsequent lessons become more concrete and precise. 
+
 ## Contents
 
 1. Introduction to git, terminal, and Sublime, for novice programmers
@@ -340,3 +346,23 @@ Each time Chrome executes the body of the forloop, `x` and `y` are assigned diff
 ### The definition of `color`
 
 `color` is defined similarly to `x` and `y`, except `color` is assigned a random value between 0 and 2, *exclusive* (which means 2 is excluded, so color is always either 0 or 1). 
+
+### The if-else statement
+
+After the definitions of `x`, `y`, and `color`, Phase 2 contains an "if-else" statement:
+
+```
+        if (color == 1) {
+            color = 'black';
+        } else {
+            color = 'white';
+        }
+```
+
+Let's look at the first line:
+
+```
+        if (color == 1) {
+```
+
+The part inside the parentheses is called the *conditional*. Every time Chrome executes every conditional for every if-else statement, the conditional always *resolves* to either true or false.
