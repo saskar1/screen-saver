@@ -190,6 +190,8 @@ Do you see how these phases give rise to the animation pattern you see when Chro
 
 ## 8. Diving into the phases of the program
 
+Let's dive into each of the phases to see how they actually work.
+
 ### Phase 1: initialize variables
 
 ```js
@@ -222,9 +224,9 @@ The phase begins with the line `for (var i = 0; i < 10000; i++) {` which begins 
 
 Also notice, the first line ends with a curly brace, and the last line ends with a curly brace. These curly braces mark the beginning and end of the for loop.
 
-There are 10 lines of code inside the body of the for loop (i.e. inside the curly braces). Together, these lines draw one square. The for loop executes the body of the loop 10,000 times, so, all together, thats how the for loop draws 10,000 squares.
+There are 10 lines of code inside the body of the for loop (i.e. inside the curly braces). Together, these 10 lines draw one square. The for loop executes the body of the loop 10,000 times, so, all together, thats how the for loop draws 10,000 squares.
 
-I will explain more in a few sections.
+I will explain more soon.
 
 ### Phase 3: indefinitely "expand" pixels
 
