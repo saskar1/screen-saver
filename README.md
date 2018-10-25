@@ -218,6 +218,56 @@ Recall, Phase 2 draws 10,000 squares using a for loop with the following code:
     }
 ```
 
+Let's do a quick experiment. Let's see what happens if we run Phases 1 and 2, but we omit Phase 3.
+
+We omit Phase 3 by "commenting it out." Just before Phase 3 begins add a line that contains the following: `/*`. Then, just after Phase 3 ends, add a line that contains the following: `*/`. Your `.js` file should look like this:
+
+```js
+var width = 600;
+var height = 300;
+
+async function run() {
+
+    var count = 0;
+
+    for (var i = 0; i < 10000; i++) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        color = randInt(0,2);
+        if (color == 1) {
+            color = 'black';
+        } else {
+            color = 'white';
+        }
+        drawSquare(x, y, color);
+    }
+
+    /*
+    var count = 0;
+    while (true) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        var color = getColorAtPixel(x, y);
+        drawSquare(x, y, color);
+        count++;
+        if (count % 100 == 0) {
+            await sleep(1);
+        }
+    }
+    */
+}
+
+run();
+```
+
+When you comment out a block of code like this, then Chrome ignores that code as if it's not there.
+
+Refresh your browser, and you should see a still image of a black and white pattern.
+
+...
+
+
+
 In this lesson, I'm not going to explain the first line (`for (var i = 0; i < 10000; i++) {`) in any more detail than I already have.
 
 Rather, let's focus on the lines of code in the loop body.
