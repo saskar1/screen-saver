@@ -389,6 +389,8 @@ That's all.
 
 ### Phase 3 in detail
 
+Recall, Phase 3 continually draws squares onto the canvas, and does not stop until you close the tab or window in Chrome. Here's the code:
+
 ```js
     var count = 0;
     while (true) {
@@ -401,4 +403,21 @@ That's all.
             await sleep(1);
         }
     }
+```
+
+Phase 3 stars off with a variable definition, where Chrome assigns the value zero to the variable `count`.
+
+Then Chrome enters the body of the while-true loop.
+
+Chrome executes two variable definitions for `x` and `y` similar to Phase 2.
+
+```js
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+```
+
+Then, Chrome executes the variable definition for color:
+
+```js
+        var color = getColorAtPixel(x, y);
 ```
