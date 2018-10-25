@@ -405,8 +405,11 @@ Recall, Phase 3 continually draws squares onto the canvas, and does not stop unt
     }
 ```
 
+#### Variable definition for `count`
+
 Phase 3 stars off with a variable definition, where Chrome assigns the value zero to the variable `count`.
 
+#### Variable definition for `x` and `y`
 Then Chrome enters the body of the while-true loop.
 
 Chrome executes two variable definitions for `x` and `y` similar to Phase 2.
@@ -416,8 +419,41 @@ Chrome executes two variable definitions for `x` and `y` similar to Phase 2.
         var y = randInt(0, height);
 ```
 
+#### Variable definition for `color`
+
 Then, Chrome executes the variable definition for color:
 
 ```js
         var color = getColorAtPixel(x, y);
 ```
+
+Here, `color` is assigned the color of the pixel at coordinate `x`, `y`.
+
+#### `drawSquare`
+
+The next line draws the square, centered at coordinate `x`, `y` and with the specified `color`.
+```js
+        drawSquare(x, y, color);
+```
+
+#### `count++`
+
+Recall, the first line of Phase 3 assigns the value 0 to `count`.
+
+```
+    var count = 0;
+```
+
+The statement `count++;` "increments" the `count` variable, which means: when Chrome executes `count++`, Chrome increases `count` by `1`.
+
+So, if `count` were equal to `0` before, then `count++;` assigns the value 1 to the variable `count`.
+
+Or, if `count` were equal to `1` before, then `count++;` assigns the value 2 to the variable `count`.
+
+And so on.
+
+Therefore, the `count` variable keeps track of how many times Chrome has executed the body of the while-true loop.
+
+#### `if (count % 100 == 0) {` 
+
+Recall, the part inside the parentheses is called the conditional. 
