@@ -456,4 +456,33 @@ Therefore, the `count` variable keeps track of how many times Chrome has execute
 
 #### `if (count % 100 == 0) {` 
 
-Recall, the part inside the parentheses is called the conditional. 
+Recall, the part inside the parentheses is called the conditional, `count % 100 == 0`. 
+
+And recall, the conditional resolves to true if the leftside equals the right side.
+
+So, we must ask: when does `count % 100` equal `0`?
+
+Well, first I need to explain the `%` operator. `%` means the remainder of dividion. E.g.:
+
+- `10 % 2` equals `0`, because 10 / 2 equals 5 with no remainder
+- `10 % 3` equals `1`, because 10 / 3 equals 3 with a remainder of `1`
+- `10 % 4` equals `2`, because 10 / 4 equals 2 with a remainder of `2`
+
+As for `count % 100 == 0`, the remainder if `count` divided by 100 is zero if, and only if, count is a multiple of 100. E.g.
+
+- If `count` equals `100` then `count % 100 == 0` resolves to true
+- If `count` equals `200` then `count % 100 == 0` resolves to true
+- If `count` equals `300` then `count % 100 == 0` resolves to true
+- Etc.
+
+Putting it all together... 
+
+```js
+        if (count % 100 == 0) {
+            await sleep(1);
+        }
+```
+
+... we see that Chrome executes `await sleep(1);` every hundred times Chrome executes the body of the while-true loop.
+
+In other words, in Phase 3 Chrome draws one hundred squares, then executes `await sleep(1);` , then draws another hundred squares, then executes `await sleep(1);` , then draws another hundred squares, and so on.
