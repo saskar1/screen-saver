@@ -365,4 +365,18 @@ Let's look at the first line:
         if (color == 1) {
 ```
 
-The part inside the parentheses is called the *conditional*. Every time Chrome executes every conditional for every if-else statement, the conditional always *resolves* to either true or false.
+The part inside the parentheses is called the *conditional*. In our case, the conditional here is `color == 1`. Notice there are two equal signs in the conditional, whereas variable definitions (such as `var color = randInt(0,2);`) have only one equal sign.
+
+One equal sign is the *assignment operator*. For the assignment operator, Chrome takes the value to the right of the equal sign, and assigns that value to the variable on the left of the equal sign.
+
+In contrast, two equal signs represents the *equality operator*. For the equality operator, Chrome compares the value on the left against the value on the right. Then, if the values are equal to each other, the expression *resolves* to the value `true`. If the values are not equal, the expression *resolves*  to `false`.
+
+Does that make sense? No. That's OK, we'll come back to this topic in subsequent lessons.
+
+Every time Chrome executes a conditional, the conditional always *resolves* to either true or false---which is to say, every conditional (once executed) is either true or false.
+
+
+
+During execution, if the conditional turns out to be true---then Chrome executes the first block (wrapped by curly braces). Otherwise, Chrome executes the second block (wrapped by curly braces).
+
+Putting it all together:
