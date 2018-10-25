@@ -329,7 +329,7 @@ In this lesson, I'm not going to explain the first line (`for (var i = 0; i < 10
 
 Rather, let's focus on the lines of code in the loop body.
 
-### The definitions of `x` and `y`
+#### The definitions of `x` and `y`
 
 `var x = randInt(0, width);` and `var y = randInt(0, height);` are variable definitions, similar to `width`, `height`, and `count.`
 
@@ -339,15 +339,15 @@ Each time Chrome executes the body of the forloop, `x` and `y` are assigned diff
 
 (See what happens if you change the definition of `x` to something like `var x = randInt(100, 200);` and so on).
 
-### The definition of `color`
+#### The definition of `color`
 
 `color` is defined similarly to `x` and `y`, except `color` is assigned a random value between 0 and 2, *exclusive* (which means 2 is excluded, so color is always either 0 or 1). 
 
-### The if-else statement
+#### The if-else statement
 
 After the definitions of `x`, `y`, and `color`, Phase 2 contains an "if-else" statement:
 
-```
+```js
         if (color == 1) {
             color = 'black';
         } else {
@@ -357,7 +357,7 @@ After the definitions of `x`, `y`, and `color`, Phase 2 contains an "if-else" st
 
 Let's look at the first line:
 
-```
+```js
         if (color == 1) {
 ```
 
@@ -375,14 +375,30 @@ That was a lot of words, and what it all boils down to is: if color is randomly 
 
 Phew.
 
-### The `drawSquare` function call 
+#### The `drawSquare` function call 
 
 The last line of the for loop is:
 
-```
+```js
         drawSquare(x, y, color);
 ```
 
 This line draws a square, centered at `x` and `y` with color `color`.
 
 That's all.
+
+### Phase 3 in detail
+
+```js
+    var count = 0;
+    while (true) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        var color = getColorAtPixel(x, y);
+        drawSquare(x, y, color);
+        count++;
+        if (count % 100 == 0) {
+            await sleep(1);
+        }
+    }
+```
