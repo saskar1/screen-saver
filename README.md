@@ -226,55 +226,9 @@ Also notice, the first line ends with a curly brace, and the last line ends with
 
 There are 10 lines of code inside the body of the for loop (i.e. inside the curly braces). Together, these 10 lines draw one square. The for loop executes the body of the loop 10,000 times, so, all together, thats how the for loop draws 10,000 squares.
 
-I will explain more soon.
+#### Experiment
 
-### Phase 3: indefinitely "expand" pixels
-
-```js
-    var count = 0;
-    while (true) {
-        var x = randInt(0, width);
-        var y = randInt(0, height);
-        var color = getColorAtPixel(x, y);
-        drawSquare(x, y, color);
-        count++;
-        if (count % 100 == 0) {
-            await sleep(1);
-        }
-    }
-```
-
-Phase 3 begins with a variable definition, `var count = 0;`, which is similar to the variable definitions of Phase 1.
-
-The phase continues with the line `while(true) {`, which begins the  definition of a "while-true loop." Whereas the for loop 
-of Phase 2 draws 10,000 squares, this while-true loop draws ∞ squares. (Well actually, once the web page is closed it stops 
-drawing squares). The difference between a for loop and a while-true loop is: while-true loops never end.
-
-Like the for loop, the while-true loop has two curly braces. The body of the while-true loop contains 8 lines of code, which 
-together "expand" one pixel.
-
-I will explain more in a few sections.
-
-
-## 8. Phase 2 in detail
-
-Recall, Phase 2 draws 10,000 squares using a for loop with the following code:
-
-```js
-    for (var i = 0; i < 10000; i++) {
-        var x = randInt(0, width);
-        var y = randInt(0, height);
-        var color = randInt(0,2);
-        if (color == 1) {
-            color = 'black';
-        } else {
-            color = 'white';
-        }
-        drawSquare(x, y, color);
-    }
-```
-
-Let's do a quick experiment. Let's see what happens if we run Phases 1 and 2, but we omit Phase 3.
+I will explain more details soon, but first let's do a quick experiment. Let's see what happens if we run Phases 1 and 2, but we omit Phase 3.
 
 We omit Phase 3 by "commenting it out." Just before Phase 3 begins add a line that contains the following: `/*`. Then, just after Phase 3 ends, add a line that contains the following: `*/`. Your `.js` file should look like this:
 
@@ -320,9 +274,54 @@ When you comment out a block of code like this, then Chrome ignores that code as
 
 Refresh your browser, and you should see a still image of a black and white pattern.
 
-...
+
+### Phase 3: indefinitely "expand" pixels
+
+```js
+    var count = 0;
+    while (true) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        var color = getColorAtPixel(x, y);
+        drawSquare(x, y, color);
+        count++;
+        if (count % 100 == 0) {
+            await sleep(1);
+        }
+    }
+```
+
+Phase 3 begins with a variable definition, `var count = 0;`, which is similar to the variable definitions of Phase 1.
+
+The phase continues with the line `while(true) {`, which begins the  definition of a "while-true loop." Whereas the for loop 
+of Phase 2 draws 10,000 squares, this while-true loop draws ∞ squares. (Well actually, once the web page is closed it stops 
+drawing squares). The difference between a for loop and a while-true loop is: while-true loops never end.
+
+Like the for loop, the while-true loop has two curly braces. The body of the while-true loop contains 8 lines of code, which 
+together "expand" one pixel.
+
+I will explain more details soon.
+
+## 9. Diving deeper into the phases of the program
 
 
+### Phase 2 in detail
+
+Recall, Phase 2 draws 10,000 squares using a for loop with the following code:
+
+```js
+    for (var i = 0; i < 10000; i++) {
+        var x = randInt(0, width);
+        var y = randInt(0, height);
+        var color = randInt(0,2);
+        if (color == 1) {
+            color = 'black';
+        } else {
+            color = 'white';
+        }
+        drawSquare(x, y, color);
+    }
+```
 
 In this lesson, I'm not going to explain the first line (`for (var i = 0; i < 10000; i++) {`) in any more detail than I already have.
 
