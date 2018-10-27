@@ -8,7 +8,7 @@ async function run() {
         var y = randInt(0, height);
         var color = randInt(0,2);
         if (color == 1) {
-            color = 'black';
+            color = 'blue';
         } else {
             color = 'white';
         }
